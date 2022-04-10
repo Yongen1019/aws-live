@@ -80,31 +80,6 @@ def AddEmp():
     print("all modification done...")
     return render_template('AddEmpOutput.html', name=emp_name)
 
-@app.route("/addatt", methods=['POST'])
-def AddAtt():
-    empid = request.form['empid']
-    
-    now = dateAndTime.now()
-    dateAndTime = now.strftime(%d %m %Y, %H %M %S)
-
-    insert_sql = "INSERT INTO employee VALUES (%s, %s)"
-    cursor = db_conn.cursor()
-
-    if empid == "":
-        return "Please enter an Employee ID!"
-
-    try:
-        cursor.execute(insert_sql, (empid, dateAndTime))
-        db_conn.commit()
-        s3 = boto3.resource('s3')
-
-    except Exception as e:
-            return str(e)
-
-    finally:
-        cursor.close()
-    return render_template('AddAttOutput.html', name=empid)
-
 @app.route("/getpayroll", methods=['GET', 'POST'])
 def GetPayroll():
 
