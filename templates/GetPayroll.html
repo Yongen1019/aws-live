@@ -94,14 +94,26 @@
 
             <br>
 
-            <div id="title">Employee ID<br>{{id}}</div>
+            <form action="/payroll" autocomplete="on" method="POST" enctype="multipart/form-data">
+                            
+                <div id="title">Employee ID<br>{{id}}</div>
 
-            <div id="title">Employee Name<br>{{name}}</div>
+                <div id="title">Employee Name<br>{{name}}</div>
 
-            <div id="title">Rate Per Day<br>{{rate}}</div>
+                <div id="title">Rate Per Day<br>{{rate}}</div>
+
+                <div id="title">Salary<br>{{salary}}</div>
+
+                <div id="title">
+                    <button class="pushable">
+                        <span class="front">
+                            Return
+                        </span>
+                    </button>
+                </div>
+
+            </form>
             
-            <div id="title">Salary<br>{{salary}}</div>
-
             <br>
         </center>
     </body>
