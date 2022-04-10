@@ -31,6 +31,11 @@ def Payroll():
     return render_template('PayrollCal.html')
 
 
+@app.route("/addatt", methods=['GET', 'POST'])
+def AddAtt():
+    return render_template('AddAtt.html')
+
+
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
     emp_id = request.form['emp_id']
@@ -95,16 +100,42 @@ def GetPayroll():
 
         # if SELECT:
         result = cursor.fetchone()
-
+        
+        dayint = int(day)
         emp_id = result[0]
         name = result[1]
         rate_per_day = result[5]
-        salary = result[5] * day
+        salary = rate_per_day * dayint
         
     finally:
         cursor.close()
 
     return render_template('GetPayroll.html', id=emp_id, name=name, rate=rate_per_day, salary=salary)
+
+@app.route("/addatt2", methods=['GET','POST'])
+def AddAttOutPut():
+    empid = request.form['empid']
+    cursor = db_conn.cursor()
+    
+    now = datetime.now()
+    now.strftime("%d-%m-%Y, %H:%M:%S")
+
+    insert_sql = "INSERT INTO attendance VALUES (%s)"
+    cursor = db_conn.cursor()
+
+    if empid == "":
+        return "Please enter an Employee ID!"
+
+    try:
+        cursor.execute(insert_sql, (empid))
+        db_conn.commit()
+
+    except Exception as e:
+            return str(e)
+
+    finally:
+        cursor.close()
+    return render_template('AddAttOutPut.html', id=empid)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
