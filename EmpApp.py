@@ -111,6 +111,8 @@ def GetPayroll():
     finally:
         cursor.close()
 
+    if name == null:
+        return render_template('NullPayroll.html')
     return render_template('GetPayroll.html', id=emp_id, name=name, rate=rate_per_day, salary=salary)
 
 @app.route("/addatt2", methods=['GET','POST'])
