@@ -28,17 +28,29 @@
 		background: transparent;
 	}
 
-	h1 {
+	.input {
+		height: 40px;
+		width: 18%;
+		font-size: 11pt;
+		color: midnightblue;
+		border-radius: 5px;
+		text-align: center;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+
+	.h1 {
 		font-family: cursive;
 		font-size: larger;
 		color: black;
 
 	}
 
-	h2 {
+	.h2 {
 		font-family: cursive;
 		font-size: medium;
-		color: black;
+		color: grey;
+		margin-top: 30px;
 	}
 </style>
 <header>
@@ -73,18 +85,18 @@
 <center class="content">
 	<font color="black" size="5" style="font-family: avenir">
 
-		<h1>Employee Attendance</h1>
+		<h1 class="h1">Employee Attendance</h1>
 
 		<body bgcolor="lightgrey">
 
 			<form action="/getatt2" autocomplete="on" method="POST">
 
-				<h2 style="color: grey">Enter Employee ID</h2>
+				<h2 class="h2">Enter Employee ID</h2>
 
-				<input style="height:25px;font-size:14pt;" type="number" name="empid" autofocus size="40"><br><br>
+				<input class="input" type="number" name="empid" autofocus size="40"><br><br>
 
 				<button type="submit" style="background: grey; height: 45px; width: 200px; color: 
-				  white; size: 5; font:oblique; font-size:medium">CHECK ATTENDANCE</button><br><br>
+				  white; size: 5; font:oblique; font-size:medium;border-radius: 12px;">CHECK ATTENDANCE</button><br><br>
 
 			</form>
 
