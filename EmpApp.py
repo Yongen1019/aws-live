@@ -84,6 +84,7 @@ def AddEmp():
 def GetPayroll():
 
     emp_id = request.form['emp_id']
+    day = request.form['noofday']
 
     cursor = db_conn.cursor()
     select_sql = "SELECT * FROM employee WHERE empid = %s"
@@ -98,11 +99,12 @@ def GetPayroll():
         emp_id = result[0]
         name = result[1]
         rate_per_day = result[5]
+        salary = result[5] * day
         
     finally:
         cursor.close()
 
-    return render_template('GetPayroll.html', id=emp_id, name=name, rate=rate_per_day)
+    return render_template('GetPayroll.html', id=emp_id, name=name, rate=rate_per_day, salary=salary)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
