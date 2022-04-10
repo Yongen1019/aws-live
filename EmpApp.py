@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from pymysql import connections
+from unittest import result
 import datetime
 import os
 import boto3
@@ -37,7 +38,7 @@ def AddAtt():
     return render_template('AddAtt.html')
 
 
-@app.route("/getatt", methods=['GET'])
+@app.route("/getatt", methods=['GET', 'POST'])
 def GetAtt():
     return render_template('GetAtt.html')
 
