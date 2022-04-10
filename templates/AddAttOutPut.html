@@ -28,17 +28,18 @@
 		background: transparent;
 	}
 
-	h1 {
+	.h1 {
 		font-family: cursive;
 		font-size: larger;
 		color: black;
 
 	}
 
-	h2 {
+	.h2 {
 		font-family: cursive;
 		font-size: medium;
-		color: black;
+		color: grey;
+		margin-top: 30px;
 	}
 </style>
 <header>
@@ -72,13 +73,13 @@
 		<font color="DodgerBlue" size="5" style="font-family: avenir">
 
 <body bgcolor="lightgrey">
-	<h1>ATTENDANCE TAKEN SUCCESSFUL!</h1><br>
-	<h2>"{{ id }}", you've taken your attendance at "{{ datetime }}", good Luck at work!</h2><br>
+	<h1 class="h1">ATTENDANCE TAKEN SUCCESSFUL!</h1><br>
+	<h2 class="h1">"{{ id }}", you've taken your attendance at "{{ datetime }}", good Luck at work!</h2><br>
 	<title>Add attendance</title>
 	<form action="/addatt" autocomplete="on" method="GET">
 
 		<button type="submit" href="/addatt"
-			style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">RETURN</button><br><br>
+			style="background: grey; height: 45px; width: 200px; color:white; font:oblique;border-radius:12px">RETURN</button><br><br>
 
 	</form>
 </body>
