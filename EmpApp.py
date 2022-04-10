@@ -26,9 +26,9 @@ def home():
     return render_template('AddEmp.html')
 
 
-@app.route("/about", methods=['POST'])
-def about():
-    return render_template('www.intellipaat.com')
+@app.route("/payrollcal", methods=['GET', 'POST'])
+def Payroll():
+    return render_template('PayrollCal.html')
 
 
 @app.route("/addemp", methods=['POST'])
