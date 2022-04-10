@@ -220,7 +220,6 @@ def deleteEmp(empid):
     cursor.execute('DELETE FROM employee WHERE empid = %s', empid)
     db_conn.commit()
     cursor.close()
-    time.sleep(2)
     return render_template('GetEmpOutput.html')
 
 
