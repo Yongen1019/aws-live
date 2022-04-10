@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Attendance</title>
+</head>
+<style type="text/css">
+	table{
+		border-collapse: collapse;
+		width: 100%;
+		color: #d96459;
+		font-family: monospace;
+		font-size: 20px;
+		text-align: left;
+	}
+	th {
+		background-color: #d96459;
+		color: white;
+	}
+
+</style>
+<center>
+	<font color="black" size="5" style="font-family: avenir">
+
+		<h1 style="color: DodgerBlue">Employee Attendance</h1>
+
+		<body bgcolor="lightgrey">
+			<form>
+				<div>
+					<table>
+						<tr>
+							<th>
+								Employee ID
+							</th>
+							<th>
+								Date and Time
+							</th>
+						</tr>
+						<tr>
+							<td>
+								 {{ id }} 
+							</td>
+							<td>
+								{{ dateTime }}
+							</td>
+
+						</tr>
+					</table>
+					
+			  		<button type="submit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;" formaction="http://3.134.115.108:80/getemp">RESET</button><br><br>
+
+			  	</div>
+
+			</form>
+
+		</body>
+
+	</font>
+</center>
+</html>
