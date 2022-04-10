@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EDIT Employee Information</title>
+</head>
+<center>
+    <font color="black" size="4" style="font-family: avenir">
+
+        <h1 style="color: DodgerBlue">EDIT Employee</h1>
+
+        <body bgcolor="lightgrey">
+            {% for result in results %}
+
+            <form action="/triggerUpdate" method="POST" enctype="multipart/form-data">
+
+                Employee ID:<br> <input value="{{result[0]}}" type="text"
+                    style="height:25px;font-size:14pt; color:grey;" name="empid"><br><br>
+
+                Name:<br> <input value="{{result[1]}}" style="height:25px;font-size:14pt;color:grey;" type="text"
+                    name="name"><br><br>
+
+                Gender:<br> <input value="{{result[2]}}" style="height:25px;font-size:14pt;color:grey;" type="text"
+                    name="gender"><br><br>
+
+                Phone:<br> <input value="{{result[3]}}" style="height:25px;font-size:14pt;color:grey;" type="text"
+                    name="phone"><br><br>
+
+                Location:<br> <input value="{{result[4]}}" style="height:25px;font-size:14pt;color:grey;" type="text"
+                    name="location"><br><br>
+
+                Rate Per Day:<br> <input value="{{result[5]}}" style="height:25px;font-size:14pt;color:grey;"
+                    type="number" name="rate_per_day"><br><br>
+
+                Position:<br> <input value="{{result[6]}}" style="height:25px;font-size:14pt;color:grey;" type="text"
+                    name="position"><br><br>
+
+                Hire Date:<br> <input value="{{result[7]}}" style="height:25px;font-size:14pt;color:grey;" type="date"
+                    name="hire_date"><br><br>
+
+                <button type="submit"
+                    style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">UPDATE
+                    DATABASE</button>
+
+            </form>
+            {% endfor %}
+
+        </body>
+
+    </font>
+</center>
+
+</html>
