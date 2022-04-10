@@ -118,17 +118,17 @@ def AddAttOutPut():
     empid = request.form['empid']
     cursor = db_conn.cursor()
     
-    now = datetime.now()
+    now = datetime.datetime.now()
     now.strftime("%d-%m-%Y, %H:%M:%S")
 
-    insert_sql = "INSERT INTO attendance VALUES (%s)"
+    insert_sql = "INSERT INTO attendance VALUES (%s, %s)"
     cursor = db_conn.cursor()
 
     if empid == "":
         return "Please enter an Employee ID!"
 
     try:
-        cursor.execute(insert_sql, (empid))
+        cursor.execute(insert_sql, (empid, dateAndTime))
         db_conn.commit()
 
     except Exception as e:
