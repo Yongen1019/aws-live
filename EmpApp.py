@@ -37,6 +37,11 @@ def AddAtt():
     return render_template('AddAtt.html')
 
 
+@app.route("/getatt", methods=['GET'])
+def GetAtt():
+    return render_template('GetAtt.html')
+
+
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
     emp_id = request.form['emp_id']
@@ -140,6 +145,15 @@ def AddAttOutPut():
     finally:
         cursor.close()
     return render_template('AddAttOutPut.html', id=empid, datetime = now)
+
+@app.route("/getatt2", methods=['GET', 'POST'])
+def GetAttOutPut():
+    cursor = db_conn.cursor()
+    cursor.execute('Select * from attendance')
+    results = cursor.fetchall()
+    lresults = list(results)
+
+    return render_template('GetAttOutput.html', results=lresults,)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
