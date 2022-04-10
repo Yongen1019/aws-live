@@ -26,7 +26,7 @@ def home():
     return render_template('AddEmp.html')
 
 
-@app.route("/payrollcal", methods=['GET', 'POST'])
+@app.route("/payroll", methods=['GET', 'POST'])
 def Payroll():
     return render_template('PayrollCal.html')
 
