@@ -86,7 +86,7 @@ def GetPayroll():
     emp_id = request.form['emp_id']
 
     cursor = db_conn.cursor()
-    select_sql = "SELECT * FROM employee WHERE emp_id = %s"
+    select_sql = "SELECT * FROM employee WHERE empid = %s"
     adr = (emp_id, )
 
     try:
@@ -97,7 +97,7 @@ def GetPayroll():
 
         emp_id = result[0]
         name = result[1]
-        rate_per_day = result[2]
+        rate_per_day = result[5]
         
     finally:
         cursor.close()
