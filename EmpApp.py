@@ -149,8 +149,9 @@ def AddAttOutPut():
 
 @app.route("/getatt2", methods=['GET', 'POST'])
 def GetAttOutPut():
+    empid = request.form['empid']
     cursor = db_conn.cursor()
-    cursor.execute('Select * from attendance')
+    cursor.execute('Select * from attendance WHERE empid = %s', empid')
     results = cursor.fetchall()
     lresults = list(results)
 
