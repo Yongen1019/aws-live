@@ -128,7 +128,7 @@ def AddAttOutPut():
         return "Please enter an Employee ID!"
 
     try:
-        cursor.execute(insert_sql, (empid, dateAndTime))
+        cursor.execute(insert_sql, (empid, now))
         db_conn.commit()
 
     except Exception as e:
