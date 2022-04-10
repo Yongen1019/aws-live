@@ -94,10 +94,6 @@ def GetPayroll():
 
         # if SELECT:
         result = cursor.fetchone()
-        print("===================================================")
-        print("========== in db =============")
-        print(result)
-        print("===================================================")
 
         emp_id = result[0]
         name = result[1]
