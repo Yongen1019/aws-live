@@ -154,7 +154,7 @@ def GetAttOutPut():
     results = cursor.fetchall()
     lresults = list(results)
 
-    return render_template('GetAttOutput.html', results=lresults,)
+    return render_template('GetAttOutPut.html', results=lresults,)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
