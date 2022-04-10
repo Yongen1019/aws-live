@@ -105,7 +105,7 @@ def GetAttOutPut():
     cursor.execute('Select * from attendance WHERE empid = %s', empid)
     results = cursor.fetchall()
     lresults = list(results)
-    print();
+    print(lresults);
     return render_template('GetAttOutPut.html', results=lresults,)
 
 @app.route("/addemp", methods=['POST'])
