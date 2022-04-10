@@ -91,24 +91,20 @@
 			<form>
 				<div>
 					<table class="table">
-						<tr>
-							<th>
-								Employee ID
-							</th>
-							<th>
-								Date and Time
-							</th>
-						</tr>
+						<thaed>
+							<tr>
+							<th>Employee ID</th>
+							<th>Date and Time</th>
+							</tr>
+						</thead>
+						<tbody>
 						{% for result in results %}
 						<tr>
-							<td>
-								{{ results[0] }}
-							</td>
-							<td>
-								{{ results[1] }}
-							</td>
+							<td>{{ results[0] }}</td>
+							<td>{{ results[1] }}</td>
 
 						</tr>
+						</tbody
 						{% endfor %}
 					</table>
 
