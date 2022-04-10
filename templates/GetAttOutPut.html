@@ -88,7 +88,6 @@
 
 		<body>
 			<h1 class="h1">Employee Attendance</h1>
-			<form>
 				<div>
 					<table class="table">
 						<thaed>
@@ -107,7 +106,7 @@
 						</tbody
 						{% endfor %}
 					</table>
-
+				<form action="/addatt" autocomplete="on" method="GET">
 					<button type="submit" href="/getatt"
 						style="background: grey; height: 45px; width: 200px; color:white; font:oblique;border-radius:12px;">RETURN</button><br><br>
 
